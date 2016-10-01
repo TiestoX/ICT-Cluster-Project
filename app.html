@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App</title>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <script src="scripts/bootstrap-filestyle.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="scripts/notify.js"></script>
+    <link rel="stylesheet" href="styles/app.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div id="disable-div"></div>
+        <nav class="navbar navbar-default navbar-fixed-top ">
+
+            <button id="btnCollapseBar" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul id="utility">
+
+                    <li id="allProducts" class="links-block">
+                        <a class="utility-links" href="#">
+                            <span><i class="icon-bar fa fa-wpforms" aria-hidden="true"></i></span>
+                            <br>
+                            <span class="icon-bar-label">Products</span>
+                        </a>
+                    </li>
+
+                    <li id="signOut" class="links-block">
+                        <a class="utility-links" href="#">
+                            <span><i class="icon-bar fa fa-sign-out" aria-hidden="true"></i></span>
+                            <br>
+                            <span class="icon-bar-label">Sign out</span>
+                        </a>
+                    </li>
+
+                    <li class="links-block">
+                        <a class="utility-links" href="#">
+                            <span><i class="icon-bar fa fa-phone" aria-hidden="true"></i></span>
+                            <br>
+                            <span class="icon-bar-label">Call</span>
+                        </a>
+                    </li>
+
+                    <li class="links-block">
+                        <a class="utility-links" href="#">
+                            <span><i class="icon-bar fa fa-commenting" aria-hidden="true"></i></span>
+                            <br>
+                            <span class="icon-bar-label">Chat</span>
+                        </a>
+                    </li>
+                    <li class="links-block">
+                        <a class="links-block" href="#">
+                            <span><i class="icon-bar fa fa-map-marker" aria-hidden="true"></i></span>
+                            <br>
+                            <span href="#" class="icon-bar-label">Stores</span>
+                        </a>
+                    </li>
+
+                    <li class="links-block">
+                        <a id="bucket" class="links-block" href="#">
+                            <span><i class="icon-bar fa fa-shopping-basket" aria-hidden="true"></i></span>
+                            <br>
+                            <span href="#" class="icon-bar-label">Bucket</span>
+                        </a>
+                        <div id="count-bucket-div"><span id="count-bucket"></span></div>
+
+                    </li>
+                    <li class="links-block">
+                        <a id="addProductBtn" class="links-block" href="#">
+                            <span><i class="icon-bar fa fa-plus-square-o" aria-hidden="true"></i></span>
+                            <br>
+                            <span href="#" class="icon-bar-label">Product</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="searchProduct">
+                <div class="row">
+                    <div class=" col-sm-10 col-sm-offset-1 padding-right">
+                        <div class="col-md-12 col-sm-12 padding-right">
+                            <input id="criteriaInput" placeholder="Criteria to search" name="/images/user.jpg" type="text" value="">
+                            <select class="productCategorySelect" name="categoryS" id="searchCategorySelect">
+                                <option value="" selected>All products</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="searchByDate">
+                <div class="row">
+
+                    <select id="selectCriteria" class="dateSearch">
+                        <option value="1" selected>From</option>
+                        <option value="2">To</option>
+                        <option value="3">Between</option>
+                    </select>
+                    <input type="text" class="dateSearch" id="dateSearch1" name="date" placeholder="Click here" required>
+                    <input type="text" class="dateSearch" id="dateSearch2" name="date" placeholder="Click here" required>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <!--  <div id="searchBar" class="row col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <label for="searchT">Product name</label>
+                <input id="criteriaInput" placeholder="Criteria to search" name="searchT" type="text">
+                <label for="categoryS">Category name</label>
+                <select class="productCategorySelect" name="categoryS" id="searchCategorySelect">
+                    <option value="" selected>All products</option>
+                </select>
+                <button class="btn btn-default" id="btnCloseSearchForm">X</button>
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                    <button id="btnSearch" type="button" class="btn btn-success" onclick="">SEARCH</button>
+                </div>
+            </div>-->
+
+            <!--    <div class="container-fluid ">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TrueNature</a>
+                </div>-->
+
+            <div id="total-price-main" class="row">
+
+                <div class="col-sm-6 col-sm-offset-6 col-md-5 col-md-offset-7 col-xs-10 col-xs-offset-2">
+
+                    <div class="total-price">
+                        <p id="total-price-h4">Total: $<span id="total-price-span">0</span></p>
+                    </div>
+
+                </div>
+            </div>
+    
+        <button id="btnSearch" class="btn btn-success">Advanced</button>
+
+        </nav>
+
+    </header>
+
+
+    <div id="addProductDiv" class="container-fluid">
+        <div class="row">
+            <div id="addProductForm" class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+
+                <input class="filestyle addProductInput" data-placeholder="No file" type="file" id="productImgInput" onchange="getProductImage()" data-buttonText="Image">
+
+                <!--<input type="text" placeholder="C:/images/img1.jpg" name="picture" contenteditable="true" id="productImgInput" class="addProductInput" required>-->
+                <img class="imgValidation" id="productImgInputValidation" src="images/app/cross.png" alt="">
+
+
+                <input type="text" placeholder="Vega" name="title" id="productTitleInput" class="addProductInput" required>
+                <img class="imgValidation" id="productTitleInputValidation" src="images/app/cross.png" alt="">
+
+
+                <input type="number" placeholder="85" name="price" min="1" id="productPriceInput" class="addProductInput" required>
+                <img class="imgValidation" id="productPriceInputValidation" src="images/app/cross.png" alt="">
+
+
+
+                <select class="productCategorySelect addProductInput" name="category" id="productCategorySelect" required></select>
+                <img class="imgValidation" id="productCategorySelectValidation" src="images/app/cross.png" alt="">
+
+
+                <input type="text" id="datepicker" name="date" placeholder="Click here" class="addProductInput" required>
+                <img class="imgValidation" id="datepickerValidation" src="images/app/cross.png" alt="">
+
+  
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                    <button id="saveProductBtn" class="btn btn-success">Save</button>
+                    <button id="exitProductBtn" class="btn btn-danger">Exit</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="item-list">
+        <div class="row col-sm-10 col-sm-offset-1" id="item-list-row">
+
+
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
